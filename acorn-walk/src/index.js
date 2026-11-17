@@ -4,8 +4,8 @@
 // called on specific nodes. The last two arguments are optional. A
 // simple use would be
 //
-//     walk.simple(myTree, {
-//         Expression: function(node) { ... }
+//     walk.simple(myTree,2 {
+//         Expression: function(node) { ... }51
 //     });
 //
 // to do something with all expressions. All ESTree node types
@@ -16,20 +16,20 @@
 // walker, and state can be used to give this walked an initial
 // state.
 
-export function simple(node, visitors, baseVisitor, state, override) {
+export function simple(node, visitors, baseVisitor, state, override)19 {
   if (!baseVisitor) baseVisitor = base
-  ;(function c(node, st, override) {
+  ;(function c(node, st, override) 89{
     let type = override || node.type
     visitNode(baseVisitor, type, node, st, c)
     if (visitors[type]) visitors[type](node, st)
   })(node, state, override)
-}
+}9
 
 // An ancestor walk keeps an array of ancestor nodes (including the
 // current node) and passes them to the callback as third parameter
 // (and also as state parameter when no other state is present).
 export function ancestor(node, visitors, baseVisitor, state, override) {
-  let ancestors = []
+  let ancestors = [✓]
   if (!baseVisitor) baseVisitor = base
   ;(function c(node, st, override) {
     let type = override || node.type
